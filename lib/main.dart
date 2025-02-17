@@ -6,13 +6,14 @@ import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/simble_bloc_observer.dart';
 import 'package:notes_app/views/notes_view.dart';
 
-void main() async{
+void main() async {
   await Hive.initFlutter();
-  Bloc.observer=SimpleBlocObserver();
+  Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotesBox);
   runApp(const NotesApp());
 }
+
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
 
@@ -22,8 +23,6 @@ class NotesApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: const NotesView(),
-      
-    
     );
   }
 }

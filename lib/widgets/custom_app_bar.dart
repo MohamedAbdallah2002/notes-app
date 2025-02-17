@@ -3,8 +3,8 @@ import 'package:notes_app/widgets/custom_app_bar_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, required this.title, required this.icon});
-final String title;
-final IconData icon;
+  final String title;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +17,7 @@ final IconData icon;
         ),
         Spacer(),
         CustomAppBarIcon(
-          icon:icon,
+          icon: icon,
         ),
       ],
     );
